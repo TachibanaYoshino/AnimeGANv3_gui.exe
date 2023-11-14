@@ -328,7 +328,7 @@ class photo_window(QWidget):
         self.running = False
         self.thread_01 = None
 
-    # 回传进度条参数
+    # Return progress bar parameters
     def th_callback(self, i):
         self.pb.setValue(i)
 
