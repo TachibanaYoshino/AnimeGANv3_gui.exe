@@ -301,11 +301,11 @@ class photo_window(QWidget):
             self.write(f"> {'-' * 3} Start running. {'-' * 3}")
 
             self.pb.setValue(0)
-            self.thread_01 = Thread_01( imgs, input_dir, output_dir, self.ort_session, self.det, self.process_image, self.save_images) 
+            self.thread_01 = Thread_01( imgs, input_dir, output_dir, self.ort_session, self.det, self.process_image, self.save_images)  # Create thread
             self.thread_01.finished.connect(self.handle_done) # Gives a completion signal when the thread completes
             self.thread_01.pb_signal.connect(self.th_callback) # Thread gives progress bar signal
             self.thread_01.updated_text.connect(self.th_log) # Thread gives log printing signal
-            self.thread_01.start()  
+            self.thread_01.start()  # Start thread
             self.running=True
             self.pb.show()
 
@@ -328,6 +328,7 @@ class photo_window(QWidget):
         self.running = False
         self.thread_01 = None
 
+    # 回传进度条参数
     def th_callback(self, i):
         self.pb.setValue(i)
 
