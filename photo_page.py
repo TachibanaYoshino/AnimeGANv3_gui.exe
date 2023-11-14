@@ -339,7 +339,6 @@ class photo_window(QWidget):
         self.tet.setPlainText("")
 
     def write(self, log):
-        """"""
         self.cursor.movePosition(QTextCursor.End)
         self.cursor.insertText(log + '\n')
         self.tet.setTextCursor(self.cursor)
@@ -360,13 +359,10 @@ class photo_window(QWidget):
                 else:
                     img = img.resize((to_8s(w), to_8s(h)), Image.ANTIALIAS)
         img = np.array(img).astype(np.float32) / 127.5 - 1.0
-        # img = img.transpose(2, 0, 1)
         img = np.expand_dims(img, axis=0)
         return img
 
     def save_images(self, images, image_path, scale):
-
-        # images = np.concatenate( [x for x in images], axis=1)
         images = (images + 1.) / 2 * 255
         images = np.clip(images, 0, 255).astype(np.uint8)
         output = []
