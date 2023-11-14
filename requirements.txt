@@ -1,0 +1,7 @@
+tqdm
+PyQt5==5.12.7
+PyQt5-sip==12.11.0
+onnxruntime==1.14.1
+numpy==1.21.6
+pillow==9.2.0
+pycryptodome==3.16.0
