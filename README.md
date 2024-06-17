@@ -16,9 +16,16 @@ pip install -r requirements.txt
 
 ## Usage
 
-#### This repo supports encrypting onnx models and codes before packaging and publishing.
-#### The open AnimeGANv3 model can be obtained in the Releases.   
+#### Build 
+```python
+pyinstaller -F home.py -w  -i ./assets/kitsune.png --hidden-import face_det
+```
 
+#### Notice
+- This repo supports encrypting onnx models and codes before packaging and publishing.
+- The open AnimeGANv3 model can be obtained in the Releases.   
+
+#### Screenshot
 ![](https://github.com/TachibanaYoshino/AnimeGANv3_gui.exe/blob/main/assets/screenshot.png)     
 
 
